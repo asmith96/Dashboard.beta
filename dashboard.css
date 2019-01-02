@@ -1,0 +1,222 @@
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+  background-color: #525252 ;
+  
+	font-family: 'Khula', sans-serif;
+	font-weight: 300;
+	color: white;
+	line-height: 1em;
+	margin: 0;
+  	padding: 1em;
+}
+#balloon-chart {
+	margin: 0 auto;
+	max-width: 900px;
+	position: relative;
+}
+#balloon-chart .row {
+	position: relative;
+	line-height: 1.25em;
+	margin-bottom: 2em;
+	height: 300px;
+}
+#balloon-chart h1 {
+  text-align: center;
+	margin: .5em 0 1em;
+  font-size: 2em;
+  font-weight: 600;
+  
+}
+#balloon-chart .label {
+	display: block;
+	bottom: 0;
+	position: absolute;
+	text-align: center;
+}
+/* Bubble */
+@-webkit-keyframes appear {
+	from {
+		top: 100%;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+@keyframes appear {
+	from {
+		top: 100%;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+#balloon-chart .bubble {
+  background-image: "img/HIPAA Seal of Compliance for Print.png";
+  display: block;
+  color: #f2f2f2;
+  color: rgb(253, 253, 253);
+	font-size: .85em;
+	background-color: #0257a5;
+	-webkit-transition: background-color, .3s ease;
+	-o-transition: background-color, .3s ease;
+	transition: background-color, .3s ease;
+	cursor: pointer;
+	border-radius: 50%;
+	-webkit-animation: appear 1s ease forwards;
+	        animation: appear 1s ease forwards;
+	top: 100%;
+  opacity: 0;
+    padding-bottom:  calc(100% - .5em);
+	position: absolute;
+	width: calc(100% - .5em);
+	border: 2px solid white;
+}
+#balloon-chart .bubble:before {
+    content: "";
+    display: block;
+    width: 100%;
+    border: 5px solid rgba(255,255,255,.25);
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    top: -5px;
+    left: -5px;
+    z-index: -1;
+}
+#balloon-chart .bubble:hover {
+  background-color: #f7931e;
+  
+  
+}
+#balloon-chart .value {
+	display: block;
+	line-height: 1em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	    -ms-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
+	font-size: 4.5vw;
+}
+/* X Axis */
+#balloon-chart .x-axis {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	padding-left: 2em;
+	padding-bottom: 10px;
+    height: 100%;
+	-webkit-box-align: end;
+	    -ms-flex-align: end;
+	        align-items: flex-end;
+}
+#balloon-chart .x-axis .col {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+	flex: 1;
+	position: relative;
+	padding: 0 .25em;
+}
+@-webkit-keyframes show {
+	from {
+		height: 0;
+		opacity: 0;
+	}
+	to {
+		height: 100%;
+		opacity: 1;
+	}
+}
+@keyframes show {
+	from {
+		height: 0;
+		opacity: 0;
+	}
+	to {
+		height: 100%;
+		opacity: 1;
+	}
+}
+#balloon-chart .x-axis .col:before {
+    content: "";
+    height: 0;
+    width: 2px;
+    background-color: rgba(255,255,255,.25);
+    border-radius: 15px;
+	-webkit-animation: show 2s ease forwards;
+	        animation: show 2s ease forwards;
+    display: block;
+    position: absolute;
+    left: 50%;
+	opacity: 0;
+	bottom: 0;
+}
+#balloon-chart .x-axis .label {
+	padding: .5em;
+	background-color: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 25px;
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	height: 60px;
+	font-size: .85em;
+	bottom: -60px;
+	width: calc(100% - .5em);
+}
+.label .valign {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+	padding: 0 .5em;
+}
+/* Y Axis */
+#balloon-chart .y-axis {
+    position: absolute;
+    width: 2em;
+    height: 100%;
+	border-right: 8px solid #fff;
+}
+#balloon-chart .y-axis .label {
+    text-align: right;
+    min-width: 150px;
+    bottom: calc(100% - 90px);
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    right: calc(100% - 90px);
+}
+@media screen and (min-width: 480px) {
+	#balloon-chart .row {
+		height: 400px;
+	}
+}
+@media screen and (min-width: 768px) {
+	#balloon-chart .row {
+		height: 500px;
+	}
+	#balloon-chart .bubble {
+		padding-bottom:  calc(100% - 2em);
+		width: calc(100% - 2em);
+	}
+	#balloon-chart .x-axis .col {
+		padding: 0 1em;
+	}
+	#balloon-chart .x-axis .label {
+		width: calc(100% - 2em);
+	}
+	#balloon-chart .value {
+		font-size: 2.5em;
+	}
+}
