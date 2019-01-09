@@ -1,4 +1,4 @@
-let bubbleChart = new Chart(ctx, {
+let bubbleChart = new Chart({
     type: 'bubble',
     data: data,
     options: option;
@@ -109,22 +109,9 @@ if(document.getElementById("bubble"), function() {
 
     render bubbleChart();
 
-    
-    
-      
-    bubbleChart.ready(function() {
-         let myChart = new FusionCharts({
-            type: "mscolumn2d",
-            renderAt: "chart-container",
-            width: "100%",
-            height: "100%",
-            dataFormat: "json",
-            dataSource
-         }).render();
-      });
-
 
     
+   
 
 
     
