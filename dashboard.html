@@ -13,29 +13,45 @@
     <link href="https://fonts.googleapis.com/css?family=Khula:300,600/"/>
     
 </head>
+<script>
+bubbleChart.ready(function() {
+    let myChart = new chart({
+        type: "mscolumn2d",
+            renderAt: "figure-container",
+            width: "100%",
+            height: "100%",
+            dataFormat: "json",
+            dataSource
+    })
+})
+
+
+
+
+</script>
  <body>
   <figure id="bubble-chart" width="500" height="500">
     <h1>Dashboard</h1>
-    <div class="row bars">
+     <div class="row bars">
       <div class="y-axis">
             <span class="label vertical">%</span>
           </div>
 
-      <div class="x-axis">
+       <div class="x-axis">
               <div class="col">
                   <div class="bubble">
                       <span class="value"> 0%</span>
-                  </div>
-                  <a href="" class="label">
+                   </div>
+                     <a href="" class="label">
                     <span class="valign"><strong>Gaps</strong></span>
                   </a>
               </div>
 
               <div class="col">
                   <div class="bubble">
-                      <span class="value">0%</span>
+                      <span class="value"></span>
                   </div>
-                  <a href="" class="label">
+                     <a href="" class="label">
                     <span class="valign"><strong>Remediation</strong></span>
                   </a>
               </div>
@@ -53,7 +69,7 @@
                   <div class="bubble">
                       <span class="value">0%</span>
                   </div>
-                  <a href="" class="label">
+                      <a href="" class="label">
                     <span class="valign"><strong>Input</strong></span>
                   </a>
               </div>
